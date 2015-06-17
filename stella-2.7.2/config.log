@@ -1,0 +1,16 @@
+Configure run on Sun Feb 8 20:15:50 PST 2009
+
+#include <string.h>
+#include <zlib.h>
+int main(void) { return strcmp(ZLIB_VERSION, zlibVersion()); }
+
+g++ ./stella-conf.cxx -o ./stella-conf -lz
+
+
+#include <string.h>
+#include <GL/gl.h>
+#include <GL/glu.h>
+int main(void) { return 0; }
+
+g++ ./stella-conf.cxx -o ./stella-conf 
+

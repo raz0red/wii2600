@@ -1,0 +1,64 @@
+;  Stella configuration file
+;
+;  Lines starting with ';' are comments and are ignored.
+;  Spaces and tabs are ignored.
+;
+;  Format MUST be as follows:
+;    command = value
+;
+;  Commmands are the same as those specified on the commandline,
+;  without the '-' character.
+;
+;  Values are the same as those allowed on the commandline.
+;  Boolean values are specified as 1 (or true) and 0 (or false)
+;
+video = soft
+gl_filter = nearest
+gl_aspectn = 100
+gl_aspectp = 100
+gl_fsmax = false
+gl_lib = libGL.so
+gl_vsync = false
+gl_texrect = false
+fullscreen = true
+tia_filter = zoom2x
+center = true
+fullres = auto
+grabmouse = false
+palette = standard
+colorloss = false
+timing = sleep
+sound = true
+fragsize = 512
+freq = 48000
+tiafreq = 48000
+volume = 100
+clipvol = true
+keymap = 98:0:0:0:0:0:0:0:0:82:78:0:0:0:0:0:0:0:0:0:77:0:0:0:0:0:0:0:81:0:0:0:0:15:0:0:0:0:0:0:0:0:0:0:0:62:0:63:64:55:41:42:43:16:17:23:24:53:54:0:61:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:79:0:0:0:80:47:0:52:49:46:22:20:19:56:21:59:60:0:0:57:58:44:0:48:0:0:0:45:51:18:50:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:11:12:14:13:0:0:0:0:0:9:10:3:4:5:6:7:8:74:72:73:75:0:0:0:0:0:0:0:0:0:0:0:0:15:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:93:0:0:0:0:0:0:0:0:0:0:0:0:0:97:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:85:86:88:87:0:89:90:91:92:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:
+pspeed = 6
+sa1 = left
+sa2 = right
+ssdir = sd://wii2600/snapshots/
+sssingle = 0
+ss1x = 0
+romdir = sd://wii2600/roms/
+statedir = sd:/wii2600/state/
+cheatfile = /apps/wii2600/stella.cht
+palettefile = /apps/wii2600/stella.pal
+propsfile = /apps/wii2600/stella.pro
+eepromdir = /apps/wii2600
+launcherres = 640x440
+launcherfont = medium
+launcherexts = allfiles
+romviewer = 0
+lastrom = 
+debuggerres = 1030x690
+uipalette = 0
+listdelay = 300
+mwheel = 4
+autoslot = false
+showinfo = false
+tiafloat = true
+avoxport = 
+stats = false
+audiofirst = true

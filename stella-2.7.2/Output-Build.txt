@@ -1,0 +1,8 @@
+1>------ Build started: Project: wiivcs, Configuration: Debug Win32 ------
+1>Performing Makefile project actions
+1>FrameBuffer.cxx
+1>linking ... boot.elf
+1>output ... boot.dol
+1>Build log was saved at "file://z:\work\repos\project\wiivcs\stella-2.7.2\Debug\BuildLog.htm"
+1>wiivcs - 0 error(s), 0 warning(s)
+========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========

@@ -1,0 +1,93 @@
+===============================================================================
+
+     SSSS    tt          lll  lll
+    SS  SS   tt           ll   ll
+    SS     tttttt  eeee   ll   ll   aaaa
+     SSSS    tt   ee  ee  ll   ll      aa
+        SS   tt   eeeeee  ll   ll   aaaaa  --  "An Atari 2600 VCS Emulator"
+    SS  SS   tt   ee      ll   ll  aa  aa
+     SSSS     ttt  eeeee llll llll  aaaaa
+
+===============================================================================
+                         To Do List - January 2009
+===============================================================================
+
+If you would like to contribute to Stella's development then find something
+on the list below and send email to Bradford Mott at bwmott@acm.org or
+Stephen Anthony at stephena@users.sourceforge.net.
+
+  * Add new TIA infrastructure with improved HMOVE emulation
+
+  * 'Fixed Debug Colours' option as explained in the 'Stella 2.6.1 released'
+    thread, post #40 on AtariAge.  Basically emulates no$2k6 behaviour.
+
+  * Research lockups in Stay Frosty ROM.  Test out sample state file in
+    AtariAge email.
+
+  * Research starting bank for 8K/F8 ROMs.  Probably default should be 0
+    instead of 1.
+
+  * Add commandline argument to randomly generate startup bank for all ROMs
+    bigger than 4K.  Shouldn't make a difference for all 'well-designed' ROMS,
+    but will pick up on errors when a ROM doesn't start from every bank.
+
+  * More work to the ROM launcher, including at least the following:
+     (1) Shortcut key where selecting the first few letters jumps to a
+         directory named that way.  Basically the same as is currently
+         done for ROMs.
+
+     (2) Fix aliases not being followed correctly in the OSX port
+         (although I suspect this isn't just an OSX issue).
+
+  * More support for copy and paste.
+
+  * Fix PropSet to properly delete entries when 'Default' is pressed in
+    the GameInfoDialog; perhaps move to C++ maps instead of the current
+    home-made BST code.
+
+  * Fix Props.cxx (or GameInfoDialog) to properly deal with quotes and
+    backslashes in strings meant to be saved to the properties file.
+
+  * Add support for uncommon controllers (KidVid, Lightgun, etc)
+
+  * Fix "Tron Man Picture Cart" (32K Tigervision bankswitching) issue
+
+  * Possible 'trace mode' in debugger (generate a file containing all
+    internal state)
+
+  * Automatic statesave at beginning of each frame (including state of
+    controllers and console switches), with the ability to 'roll back' to
+    a previous state/frame
+
+  * RewindManager to set up how often to save a state, and for how long
+    (debugger would be once per frame, normal probably once per second)
+
+  * Improve debugger support for cartridges with dedicated RAM, and add
+    source-level debugging
+
+  * Step-debug through disassembled zero-page code (get clarification on this)
+
+  * Extra SECAM 'quirks' (see Stella 2.4.1 release thread on AtariAge)
+
+  * Improve speed of Pitfall2 emulation
+
+  * Improve sound output of Pitfall2
+
+  * Add auto-detection for all remaining bankswitch types
+
+  * Either Support DASM as frontend or integrate a 6507 Assembler
+
+  * Either Support Distella as frontend or integrate a 6507 Disassembler
+
+  * Add a Sprite/Animation Editor 
+
+  * AVI/MPEG export
+
+  * Add a PF Editor
+
+  * Client/Server networked play for up to 4 Computers via LAN/Internet
+
+  * Tracking Hiscores
+
+  * Find people to handle new ports, and try to more actively recruit people
+    into the Stella project

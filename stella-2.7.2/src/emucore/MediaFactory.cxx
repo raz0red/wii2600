@@ -1,0 +1,117 @@
+//============================================================================
+//
+//   SSSS    tt          lll  lll
+//  SS  SS   tt           ll   ll
+//  SS     tttttt  eeee   ll   ll   aaaa
+//   SSSS    tt   ee  ee  ll   ll      aa
+//      SS   tt   eeeeee  ll   ll   aaaaa  --  "An Atari 2600 VCS Emulator"
+//  SS  SS   tt   ee      ll   ll  aa  aa
+//   SSSS     ttt  eeeee llll llll  aaaaa
+//
+// Copyright (c) 1995-2009 by Bradford W. Mott and the Stella team
+//
+// See the file "license" for information on usage and redistribution of
+// this file, and for a DISCLAIMER OF ALL WARRANTIES.
+//
+// $Id: MediaFactory.cxx,v 1.13 2009/01/01 18:13:36 stephena Exp $
+//============================================================================
+
+////////////////////////////////////////////////////////////////////
+// I think you can see why this mess was put into a factory class :)
+////////////////////////////////////////////////////////////////////
+
+#include "MediaFactory.hxx"
+
+#include "OSystem.hxx"
+#include "Settings.hxx"
+
+#include "FrameBuffer.hxx"
+#ifdef DISPLAY_OPENGL
+  #include "FrameBufferGL.hxx"
+#endif
+
+#if defined(GP2X)
+  #include "FrameBufferGP2X.hxx"
+#elif defined (_WIN32_WCE)
+  #include "FrameBufferWinCE.hxx"
+#else
+  #include "FrameBufferSoft.hxx"
+#endif
+
+#include "Sound.hxx"
+#include "SoundNull.hxx"
+#ifdef SOUND_SUPPORT
+  #ifdef _WIN32_WCE
+    #include "SoundWinCE.hxx"    
+  #elif WII
+    #include "SoundWii.hxx"    
+  #else
+    #include "SoundSDL.hxx"
+  #endif
+#endif
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+FrameBuffer* MediaFactory::createVideo(OSystem* osystem)
+{
+  FrameBuffer* fb = (FrameBuffer*) NULL;
+
+  // OpenGL mode *may* fail, so we check for it first
+#ifdef DISPLAY_OPENGL
+  if(osystem->settings().getString("video") == "gl")
+  {
+    const string& gl_lib = osystem->settings().getString("gl_lib");
+    if(FrameBufferGL::loadLibrary(gl_lib))
+      fb = new FrameBufferGL(osystem);
+    else
+      cerr << "ERROR: Couldn't dynamically load OpenGL library ...\n";
+  }
+#endif
+
+  // If OpenGL failed, or if it wasn't requested, create the appropriate
+  // software framebuffer
+  if(!fb)
+  {
+   #if defined (GP2X)
+    fb = new FrameBufferGP2X(osystem);
+   #elif defined (_WIN32_WCE)
+    fb = new FrameBufferWinCE(osystem);
+   #else
+    fb = new FrameBufferSoft(osystem);
+   #endif
+  }
+
+  // This should never happen
+  assert(fb != NULL);
+  switch(fb->type())
+  {
+    case kSoftBuffer:
+      osystem->settings().setString("video", "soft");
+      break;
+
+    case kGLBuffer:
+      osystem->settings().setString("video", "gl");
+      break;
+  }
+
+  return fb;
+}
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Sound* MediaFactory::createAudio(OSystem* osystem)
+{
+  Sound* sound = (Sound*) NULL;
+
+#ifdef SOUND_SUPPORT
+  #if defined (_WIN32_WCE)
+    sound = new SoundWinCE(osystem);
+  #elif defined (WII)
+    sound = new SoundWii(osystem);
+  #else
+    sound = new SoundSDL(osystem);
+  #endif
+#else
+  sound = new SoundNull(osystem);
+#endif
+
+  return sound;
+}
