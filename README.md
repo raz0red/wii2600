@@ -334,13 +334,13 @@ the following locations:
 Special thanks
 --------------------------------------------
 
-munky6           : Lead tester
-RB22             : PAL testing (0.1)
-zodiacprime      : Testing (0.1)
-Sputicus         : Helping bug fix (0.1)
-Tantric/eke-eke  : Audio code example
-yohanes          : SDL USB keyboard support
-Team Twiizers    : For enabling homebrew
+* munky6           : Lead tester
+* RB22             : PAL testing (0.1)
+* zodiacprime      : Testing (0.1)
+* Sputicus         : Helping bug fix (0.1)
+* Tantric/eke-eke  : Audio code example
+* yohanes          : SDL USB keyboard support
+* Team Twiizers    : For enabling homebrew
 
 --------------------------------------------
 Change log
